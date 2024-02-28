@@ -6,9 +6,16 @@
 @font-face {
     font-family: NeuePower;
     src: url(../assets/fonts/NeuePowerTrial-Ultra.ttf);
+    font-weight: bold;
+}
+@font-face {
+    font-family: NeuePower;
+    src: url(../assets/fonts/NeuePowerTrial-Bold.ttf);
+    font-weight: normal;
 }
 :root{
     --yellow: #FFC400;
+    --green: #00B686;
     --beige: #FDF7E8;
     --white: #FFFFFF;
     --black: #000000;
@@ -31,7 +38,7 @@ body{
 .header-video video{
     filter:brightness(0.6);
 }
-.header-video .square{
+.square{
     background-color: var(--yellow);
     width: 800px;
     aspect-ratio: 1/1;
@@ -106,4 +113,123 @@ body{
 .down-container-icon i{
     color: var(--yellow);
     font-size: 24px;
+}
+h2,h3{
+    font-family: var(--neue-power);
+}
+h2{
+    font-size: 36px;
+    font-weight: bold;
+}
+h3{
+    font-size: 16px;
+    font-weight: normal;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+.expertises{
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.expertises h2{
+    width: 50%;
+    text-align: center;
+}
+h2 span{
+    position: relative;
+}
+h2 span div{
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    background: red;
+}
+.scroll-gallery{
+    height: 800px;
+    position: relative;
+    overflow: hidden;
+}
+.gallery{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) rotate(-3deg);
+    overflow: hidden;
+    z-index: 2;
+}
+.gallery-card{
+    width: 370px;
+    height: 500px;
+    position: relative;
+}
+.gallery-card:nth-child(1){
+    animation: gallery-animation 20s linear infinite;
+}
+@keyframes gallery-animation{
+    0%{
+        margin-left: 0px;
+    }
+    100%{
+        margin-left: -3360px;
+    }
+}
+.gallery-image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 60px;
+}
+.gallery-message{
+    width: 80%;
+    padding: 20px;
+    position: absolute;
+    font-family: var(--neue-power);
+    font-size: 18px;
+    font-weight: normal;
+    border-radius: 16px;
+}
+.gallery-card:nth-child(odd) .gallery-message{
+    background-color: var(--black);
+    bottom: -50px;
+    left: 20px;
+    color: var(--white);
+}
+.gallery-card:nth-child(even) .gallery-message{
+    background-color: var(--white);
+    bottom: 450px;
+    right: 20px;
+    color: var(--black);
+}
+.gallery-message .triangle{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+}
+.gallery-card:nth-child(odd) .triangle{
+    background-color: var(--black);
+    top: 0;
+    left: 40px;
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+}
+.gallery-card:nth-child(even) .triangle{
+    background-color: var(--white);
+    bottom: 0;
+    right: 40px;
+    transform: translateX(-50%) translateY(50%) rotate(45deg);
+}
+.scroll-gallery .square{
+    width: 700px;
+    background-color: var(--green);
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    z-index: 1;
 }
