@@ -67,6 +67,11 @@ body{
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
 }
+p{
+    color: var(--black);
+    font-family: var(--neue-power);
+    font-size: 18px;
+}
 .header-video-text p{
     width: 60%;
     color: var(--white);
@@ -195,7 +200,7 @@ h2 span div{
 }
 .gallery-message{
     width: 80%;
-    padding: 20px;
+    padding: 24px;
     position: absolute;
     font-family: var(--neue-power);
     font-size: 18px;
@@ -247,9 +252,16 @@ h2 span div{
     border-radius: 40px;
     transition: .2s;
 }
+.button.white{
+    background-color: var(--white);
+    color: var(--black);
+}
 .button:hover{
     background-color: var(--dark-gray);
     transition: .2s;
+}
+.button.white:hover{
+    background-color: var(--white);
 }
 .button-container{
     display: flex;
@@ -275,6 +287,9 @@ h2 span div{
 }
 .button-figure.purple{
     background-color: var(--purple);
+}
+.button-figure.yellow{
+    background-color: var(--yellow);
 }
 .button span{
     font-family: var(--neue-power);
@@ -310,6 +325,9 @@ h2 span div{
 .w-100{
     display: flex;
     justify-content: space-between;
+}
+.w-90{
+    width: 90%;
 }
 .w-70{
     width: 80%;
@@ -434,10 +452,95 @@ h2 span div{
 }
 .buttons-container button p{
     width: 50%;
-    color: var(--black);
-    font-family: var(--neue-power);
-    font-size: 18px;
 }
 .buttons-container button:hover p{
     color: var(--white);
+}
+.propos{
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+}
+.propos-container{
+    background-color: var(--yellow);
+    display: flex;
+    justify-content: space-between;
+    border-radius: 60px;
+    overflow: hidden;
+}
+.propos-info-container{
+    padding: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+p.bold{
+    font-size: 24px;
+    font-weight: bold;
+}
+a{
+    text-decoration: none;
+    display: inline-block;
+    width: auto;
+}
+.propos-images{
+    position: relative;
+}
+.propos-images figure, .propos-images img{
+    position: absolute;
+    width: 100px;
+}
+.propos-images img.icon{
+    bottom: 0;
+    right: 0;
+    width: 800px;
+    filter: invert(100%);
+    filter:brightness(100);
+    transform: translateX(20%) translateY(20%) rotate(-45deg);
+}
+.propos-images img.logo{
+    top: 100px;
+    left: 0;
+    width: 150px;
+}
+.propos-images figure{
+    aspect-ratio: 1/1;
+    transform: rotate(-45deg);
+    position: relative;
+    overflow: hidden;
+}
+.propos-images figure:nth-child(3){
+    width: 200px;
+    top: 75px;
+    left: 250px;
+    border-radius: 60px;
+}
+.propos-images figure:nth-child(4){
+    width: 350px;
+    top: 150px;
+    left: 100px;
+    border-radius: 120px;
+}
+.propos-images figure img{
+    width: 150%;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    z-index: 2;
+}
+.propos-images figure img:nth-child(2){
+    width: 80%;
+    aspect-ratio: 1/1;
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    animation: rotate 15s linear infinite;
+}
+@keyframes rotate{
+    0%{
+        transform: translateX(-50%) translateY(-50%) rotate(0deg);
+    }
+    100%{
+        transform: translateX(-50%) translateY(-50%) rotate(360deg);
+    }
 }
