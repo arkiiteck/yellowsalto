@@ -17,6 +17,7 @@
     --yellow: #FFC400;
     --green: #00B686;
     --purple: #9778D1;
+    --blue: #00C6F4;
     --beige: #FDF7E8;
     --white: #FFFFFF;
     --black: #000000;
@@ -211,12 +212,16 @@ h2 span div{
     background-color: var(--black);
     bottom: -50px;
     left: 20px;
+}
+.gallery-card:nth-child(odd) .gallery-message p{
     color: var(--white);
 }
 .gallery-card:nth-child(even) .gallery-message{
     background-color: var(--white);
     bottom: 450px;
     right: 20px;
+}
+.gallery-card:nth-child(even) .gallery-message p{
     color: var(--black);
 }
 .gallery-message .triangle{
@@ -285,11 +290,14 @@ h2 span div{
 .button-figure.green{
     background-color: var(--green);
 }
-.button-figure.purple{
+.button-figure.purple, .purple{
     background-color: var(--purple);
 }
-.button-figure.yellow{
+.button-figure.yellow, .yellow{
     background-color: var(--yellow);
+}
+.button-figure.blue, .blue{
+    background-color: var(--blue);
 }
 .button span{
     font-family: var(--neue-power);
@@ -326,8 +334,8 @@ h2 span div{
     display: flex;
     justify-content: space-between;
 }
-.w-90{
-    width: 90%;
+.w-95{
+    width: 95%;
 }
 .w-70{
     width: 80%;
@@ -456,10 +464,17 @@ h2 span div{
 .buttons-container button:hover p{
     color: var(--white);
 }
+.nos-projects{
+    position: relative;
+}
+.nos-projects-description, .nos-projects-gallery{
+    z-index: 2;
+}
 .propos{
     padding-top: 100px;
     display: flex;
     justify-content: center;
+    z-index: 2;
 }
 .propos-container{
     background-color: var(--yellow);
@@ -493,7 +508,7 @@ a{
 .propos-images img.icon{
     bottom: 0;
     right: 0;
-    width: 800px;
+    width: 900px;
     filter: invert(100%);
     filter:brightness(100);
     transform: translateX(20%) translateY(20%) rotate(-45deg);
@@ -517,7 +532,7 @@ a{
 }
 .propos-images figure:nth-child(4){
     width: 350px;
-    top: 150px;
+    top: 125px;
     left: 100px;
     border-radius: 120px;
 }
@@ -543,4 +558,158 @@ a{
     100%{
         transform: translateX(-50%) translateY(-50%) rotate(360deg);
     }
+}
+.partenaires{
+    overflow: hidden;
+    position: relative;
+}
+.carousel-container{
+    position: relative;
+    width: 100%;
+    height: 450px;
+    z-index: 2;
+}
+.brand-carousel{
+    width: 100%;
+    padding: 0 0 100px 0;
+    display: flex;
+    align-items: center;
+    gap: 120px;
+    position: absolute;
+    overflow: hidden;
+}
+.brand-carousel-container{
+    height: 300px;
+    display: flex;
+    align-items: center;
+    gap: 120px;
+}
+.brand-carousel-container:nth-child(1){
+    animation: carouselAnimation 20s linear infinite;
+}
+@keyframes carouselAnimation{
+    0%{
+        margin-left: 0px;
+    }
+    100%{
+        margin-left: -1920px;
+    }
+}
+.brand-carousel-container figure{
+    background-color: white;
+    width: 200px;
+    aspect-ratio: 1/1;
+    display: grid;
+    place-items: center;
+    border-radius: 60px;
+    transform: rotate(45deg);
+}
+.brand-carousel-container figure img{
+    height: 45px;
+    transform: rotate(-45deg);
+}
+.figure{
+    width: 1000px;
+    aspect-ratio: 1/1;
+    position: absolute;
+    border-radius: 40%;
+    z-index: 1;
+}
+.figure.blue{
+    bottom: 0;
+    right: 0;
+    transform: translateX(30%) translateY(30%) rotate(45deg);
+}
+.figure.purple{
+    top: 200px;
+    left: 0;
+    transform: translateX(-30%) translateY(30%) rotate(45deg);
+}
+footer{
+    background-color: var(--white);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+.footer-top{
+    display: flex;
+    justify-content: space-between;
+}
+.footer-top .propos-info-container{
+    padding: 50px;
+}
+.footer-nav{
+    padding: 50px;
+    display: flex;
+    justify-content: flex-end;
+}
+.footer-nav ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 8px;
+}
+.footer-nav ul li a{
+    padding: 4px 0;
+    position: relative;
+    font-family: var(--neue-power);
+    text-decoration: none;
+    color: black;
+}
+.footer-nav ul li a div{
+    background-color: var(--black);
+    height: 2px;
+    width: 0px;
+    position: absolute;
+    bottom: 0px;
+    transition: .2s;
+}
+.footer-nav ul li a:hover div{
+    width: 100%;
+    transition: .2s;
+}
+.footer-bottom{
+    width: 100%;
+    position: relative;
+}
+.logo-yelloesalto-full{
+    position: absolute;
+    width: 90%;
+    left: 50%;
+    bottom: 180px;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+.footer-bottom .social{
+    width: 100%;
+    padding: 70px;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+
+}
+.footer-bottom .social a{
+    background-color: var(--black);
+    width: 60px;
+    aspect-ratio: 1/1;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+}
+.footer-bottom .social a i{
+    color: var(--white);
+    font-size: 20px;
+}
+.figure.yellow{
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(50%) rotate(45deg);
+    z-index: 1;
 }
